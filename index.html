@@ -12,16 +12,59 @@
     <!-- Font-awesome CDN -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Daisy UI CDN -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
      <!-- TailwindCSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     
     <link rel="stylesheet" href="./style.css">
 </head>
 <body class="bg-[#F0FDF4]">
+
+    <!-- Navbar -->
+    <nav class="navbar bg-base-100 shadow-sm bg-[#15803D]">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                </div>
+                <ul
+                    tabindex="0"
+                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                    <li><a !class="text-white">Item 1</a></li>
+                    <li>
+                    <a class="text-white">Parent</a>
+                    <ul class="p-2">
+                        <li><a class="text-white">Submenu 1</a></li>
+                        <li><a class="text-white">Submenu 2</a></li>
+                    </ul>
+                    </li>
+                    <li><a class="!text-white">Item 3</a></li>
+                </ul>
+            </div>
+            <a class="text-white text-2xl">daisyUI</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+            <li><a class="text-white">Item 1</a></li>
+            <li>
+                <details>
+                <summary class="text-white">Parent</summary>
+                <ul class="p-2 min-w-[150px]">
+                    <li><a class="text-[#15803D]">Submenu 1</a></li>
+                    <li><a class="text-[#15803D]">Submenu 2</a></li>
+                </ul>
+                </details>
+            </li>
+            <li><a  class="text-white">Item 3</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a class="btn bg-[#FACC15] px-8 py-3 border-0 rounded-full text-[#15803D]">Plant a Tree</a>
+        </div>
+    </nav>
     
     <!-- About section -->
-    <section>
+    <section class="py-14 md:py-20">
         <div class="container">
             <div class="max-w-3/4 mx-auto space-y-10">
                 <h2 class="text-[32px] font-semibold text-[#1F2937] capitalize text-center">About the Campaign</h2>
@@ -43,27 +86,61 @@
     </section>
 
     <!-- Our Impact section -->
-    <section class="bg-[#CFF0DC]">
+    <section class="bg-[#CFF0DC] py-14 md:py-20">
         <div class="container space-y-10">
             <h2 class="text-[32px] font-semibold text-[#1F2937] capitalize text-center">Our Impact</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                 <div class="rounded-xl bg-white space-y-2 text-center p-8">
-                    <h4 class="!text-[#15803D] font-semibold text-[32px]">500K+</h4>
+                    <h4 class="text-[#15803D] font-semibold text-[32px]">500K+</h4>
                     <p>Trees Planted</p>
                 </div>
 
                 <div class="rounded-xl bg-white space-y-2 text-center p-8">
-                    <h4 class="!text-[#15803D] font-semibold text-[32px]">120+</h4> 
+                    <h4 class="text-[#15803D] font-semibold text-[32px]">120+</h4> 
                     <p>Communities Involved</p>
                 </div>
 
                 <div class="rounded-xl bg-white space-y-2 text-center p-8">
-                    <h4 class="!text-[#15803D] font-semibold text-[32px]">30+</h4>
+                    <h4 class="text-[#15803D] font-semibold text-[32px]">30+</h4>
                     <p>Countries Reached</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Donate now section -->
+     <section class="bg-[#166534]">
+        <div class="container py-16">
+            <div class="md:w-[650px] mx-auto space-y-6">
+                <h2 class="text-[32px] font-semibold text-white capitalize text-center">Plant a Tree Today</h2>
+                <div class="bg-[#15803D] p-8 rounded-xl">
+                    <form action="#">
+                        <div class="space-y-3">
+                            <input id="name" type="text" name="name" placeholder="Your Name" class="block w-full rounded-md bg-white px-4 py-3 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-[#1F2937] focus:outline-2 focus:-outline-none capitalize" />
+
+                            <input id="email" type="email" name="email" placeholder="Your Email Address" class="block w-full rounded-md bg-white px-3 py-3 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-[#1F2937] focus:outline-2 focus:-outline-none capitalize" />
+
+                            <div class="flex relative">
+                                <select id="trees" name="trees" autocomplete="trees-name" class="appearance-none block w-full rounded-md px-3 py-3 text-base text-[#1F2937] outline-none capitalize bg-white pr-5 md:pr-8">
+                                    <option class="text-[#1F2937]">Number of Trees</option>
+                                    <option class="text-[#1F2937]">Trees number 1</option>
+                                    <option class="text-[#1F2937]">Trees number 2</option>
+                                </select>
+                                <div class="absolute right-4 top-1/2 transform -translate-y-1/2 text-[#1F2937]">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                            </div>
+
+                            <button class="rounded-full bg-[#FACC15] hover:bg-[#FACC15]/80 text-[#15803D] p-3 w-full cursor-pointer font-semibold">Donate Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="bg-[#14532D] py-4 text-center">
+            <p class="text-center text-white">© 2025 Green Earth. All Rights Reserved.</p>
+        </div>
+     </section>
 
 </body>
 </html>
