@@ -30,38 +30,93 @@
                 <ul
                     tabindex="0"
                     class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                    <li><a !class="text-white">Item 1</a></li>
+                    <li><a !class="text-white">About</a></li>
                     <li>
-                    <a class="text-white">Parent</a>
-                    <ul class="p-2">
-                        <li><a class="text-white">Submenu 1</a></li>
-                        <li><a class="text-white">Submenu 2</a></li>
-                    </ul>
+                    <a class="text-white">Gallery</a>
                     </li>
-                    <li><a class="!text-white">Item 3</a></li>
+                    <li><a class="!text-white">Plant a Tree</a></li>
                 </ul>
             </div>
             <a class="text-white text-2xl">daisyUI</a>
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
-            <li><a class="text-white">Item 1</a></li>
-            <li>
-                <details>
-                <summary class="text-white">Parent</summary>
-                <ul class="p-2 min-w-[150px]">
-                    <li><a class="text-[#15803D]">Submenu 1</a></li>
-                    <li><a class="text-[#15803D]">Submenu 2</a></li>
-                </ul>
-                </details>
-            </li>
-            <li><a  class="text-white">Item 3</a></li>
+            <li><a class="text-white">About</a></li>
+            <li><a class="text-white">Gallery</a></li>
+            <li><a  class="text-white">Plant a Tree</a></li>
             </ul>
         </div>
         <div class="navbar-end">
             <a class="btn bg-[#FACC15] px-8 py-3 border-0 rounded-full text-[#15803D]">Plant a Tree</a>
         </div>
     </nav>
+
+    <!-- Banner -->
+     <section class="py-24 bg-cover bg-center bg-[url('./assets/banner-bg.jpg')]">
+        <div class="container">
+            <div class="max-w-[40%] mx-auto text-center space-y-4">
+                <h1 class="text-5xl font-bold">Plant a Tree, Grow a Future</h1>
+                <p class="text-[#1F2937]">Join our mission to plant 1 million trees and make the Earth greener for future generations.</p>
+                <a href="#" class="btn bg-[#FACC15] px-8 py-3 border-0 rounded-full text-[#15803D]">Get Involved</a>
+            </div>
+        </div>
+     </section>
+
+     <!-- Choose trees section -->
+      <section class="py-14 md:py-20">
+        <div class="container space-y-10">
+            <h2 class="text-[32px] font-semibold text-[#1F2937] capitalize text-center">Choose Your Trees</h2>
+            <div class="grid grid-cols-12 gap-4 md:gap-6">
+                <div class="col-span-2 space-y-5 p-4 bg-white rounded-xl">
+                    <h2 class="font-semibold text-xl">Categories</h2>
+                    <ul class="space-y-1">
+                        <li><a href="#" class="text-base capitalize p-2 rounded inline-block">All Trees</a></li>
+                        <li><a href="#" class="text-base capitalize p-2 rounded inline-block">Fruit Trees</a></li>
+                        <li><a href="#" class="text-base capitalize p-2 rounded inline-block">Flowering Trees</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-span-8">
+                    <div class="grid grid-cols-3 gap-4 md:gap-6">
+                        <div class="p-4 rounded-xl bg-white space-y-3">
+                            <img src="./assets/about.png" class="h-[186px] w-full object-cover rounded-lg" alt="Trees image">
+                            <h4 class="font-semibold text-sm capitalize">Mango Tree</h4>
+                            <p class="text-xs">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
+                            <div class="flex items-center justify-between">
+                                <p class="bg-[#DCFCE7] px-5 py-2 rounded-full max-w-fit">Fruit Tree</p>
+                                <p class="font-semibold">৳<span>500</span></p>
+                            </div>
+                            <button class="btn mt-2 px-8 py-3 border-0 rounded-full w-full bg-[#15803D] text-white">Get Involved</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-2 p-4 bg-white rounded-xl space-y-4">
+                    <h2 class="font-semibold text-xl">Your Cart</h2>
+                    <div class="p-4 rounded-lg flex items-center justify-between bg-[#F0FDF4]">
+                        <div>
+                            <h5 class="font-semibold text-sm capitalize">Mango Tree</h5>
+                            <p><span>৳500</span> x <span>1</span></p>
+                        </div>
+                        <span class="cursor-pointer"><i class="fa-solid fa-xmark"></i></span>
+                    </div>
+                    <div class="p-4 rounded-lg flex items-center justify-between bg-[#F0FDF4]">
+                        <div>
+                            <h5 class="font-semibold text-sm capitalize">Mango Tree</h5>
+                            <p><span>৳500</span> x <span>1</span></p>
+                        </div>
+                        <span class="cursor-pointer"><i class="fa-solid fa-xmark"></i></span>
+                    </div>
+
+                    <!-- Total -->
+                    <div class="pt-4 border-t border-t-[#1F2937]/10 flex justify-between items-center">
+                        <h5 class="font-semibold text-base capitalize">Total</h5>
+                        <p class="font-bold">৳<span>1000</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
     
     <!-- About section -->
     <section class="py-14 md:py-20">
