@@ -26,13 +26,26 @@ const displayCategories = (cats) => {
 
 loadCategories();
 
+const manageSpinner = (status) =>{
+    if(status==true){
+        document.getElementById("spinner").classList.remove("hidden")
+        document.getElementById("plant-container").classList.add("hidden")
+    }else{
+        document.getElementById("plant-container").classList.remove("hidden")
+        document.getElementById("spinner").classList.add("hidden")
+    }
+}
+
 // Get All Plants
 const loadAllPlants = () =>{
+    manageSpinner(true)
     const url = "https://openapi.programming-hero.com/api/plants";
     fetch(url)
     .then((res)=> res.json())
     .then((plants)=> displayAllPlants(plants.plants))
 }
+
+let totalPrice = 0;
 const displayAllPlants = (plants) => {
     const allPlants = document.getElementById('plant-container');
     allPlants.innerHTML="";
@@ -47,11 +60,45 @@ const displayAllPlants = (plants) => {
                     <p class="bg-[#DCFCE7] px-5 py-2 rounded-full max-w-fit">${plant.category}</p>
                     <p class="font-semibold">৳<span>${plant.price}</span></p>
                 </div>
-                <button class="btn mt-2 px-8 py-3 border-0 rounded-full w-full bg-[#15803D] text-white">Add to cart</button>
+                <button class="btn mt-2 px-8 py-3 border-0 rounded-full w-full bg-[#15803D] text-white add-to-cart-btn">Add to cart</button>
             </div>
         `
         allPlants.appendChild(displayPlants);   
+
+        // Add to card btn functionality
+        const addBtn = displayPlants.querySelector(".add-to-cart-btn");
+        addBtn.addEventListener("click", function () {
+    alert(`${plant.name} has been added to the cart`);
+
+    const cartContainer = document.getElementById("cart-container");
+    const cartItem = document.createElement("div");
+    cartItem.className = "p-4 rounded-lg flex items-center justify-between bg-[#F0FDF4] mb-2";
+    cartItem.innerHTML = `
+        <div>
+            <h5 class="font-semibold text-sm capitalize">${plant.name}</h5>
+            <p><span>৳${plant.price}</span> x <span>1</span></p>
+        </div>
+        <span class="cursor-pointer remove-item"><i class="fa-solid fa-xmark"></i></span>
+    `;
+
+    cartContainer.appendChild(cartItem);
+
+    // Total price update
+    totalPrice += plant.price;
+    document.querySelector("#total-price").innerText = totalPrice;
+
+    // ❌ Remove item (must be inside addBtn click)
+    const removeBtn = cartItem.querySelector(".remove-item");
+    removeBtn.addEventListener("click", function () {
+        cartItem.remove();
+        totalPrice -= plant.price;
+        document.querySelector("#total-price").innerText = totalPrice;
+    });
+});
+
     }
+
+    manageSpinner(false)
 }
 loadAllPlants()
 
@@ -100,4 +147,6 @@ const removeActiveClass = () => {
         btn.classList.remove("active");
     });
 }
+
+
 
