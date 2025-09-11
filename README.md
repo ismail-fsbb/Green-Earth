@@ -47,7 +47,7 @@
 ```javascript
 const [a, b] = [1, 2, 3];
 console.log(a, b);
-
+```
 
 ## 5) Explain template literals in ES6. How are they different from string concatenation?
 
