@@ -1,4 +1,4 @@
-###  [Live Demo:](https://ismail-fsbb.github.io/Green-Earth)
+###  [Live Demo](https://ismail-fsbb.github.io/Green-Earth)
 
 ## 1) Difference between var, let, and const
 
@@ -57,3 +57,4 @@ console.log(a, b);
 - You can **insert variables** easily using `${variable}`.  
 
 - Supports **multi-line strings** without `\n`.  
+
